@@ -18,6 +18,7 @@
     "mongoose": "^6.6.2",
     "moongoose": "^0.0.5",
     "nodemon": "^2.0.20",
-    "passport": "^0.6.0"
+    "passport": "^0.6.0",
+    "razorpay": "^2.8.3"
   }
 }
