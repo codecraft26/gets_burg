@@ -1,7 +1,16 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
-export const connectDB = async () => {
-  const { connection } = await mongoose.connect(process.env.MONGO_URI);
 
-  console.log(`Database is connect with ${connection.host}`);
+
+const connectDatabase = () => {
+  mongoose
+    .connect('mongodb://localhost:27017/getBurg', {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
+    .then((data) => {
+      console.log(`Mongodb connected with server: $localhost 2700`);
+    });
 };
+
+module.exports = connectDatabase;
