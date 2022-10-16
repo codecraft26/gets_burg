@@ -4,9 +4,13 @@ const urlencoded=require("express")
 const app = express();
 const cors=require('cors')
 const dotenv =require('dotenv')
+const passport=require('passport')
 
 
 
+dotenv.config({
+  path: "./config/config.env",
+});
 
 // Using Middlewares
 
@@ -18,10 +22,6 @@ app.use(
   })
 );
 
-dotenv.config({
-  path:'./config/congig.env'
-})
-
 app.use(
   cors({
     credentials: true,
@@ -30,9 +30,20 @@ app.use(
   })
 );
 
-module.exports=app;
+app.use(passport.authenticate("session"));
+app.use(passport.initialize());
 
+app.enable("trust proxy");
 
+connectPassport();
 
+// Importing Routes
+const userRoute =require( "./routes/user.js");
+// import orderRoute from "./routes/order.js";
+
+app.use("/api/v1", userRoute);
+// app.use("/api/v1", orderRoute);
 
 // Using Error Middleware
+app.use(errorMiddleware);
+module.exports = app;
