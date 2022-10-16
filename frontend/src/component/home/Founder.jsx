@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./founder.scss"
+import me from "./me.jpeg";
 const Founder = () => {
   const options = {
     initial: {
@@ -16,7 +17,7 @@ const Founder = () => {
   return (
     <section className="founder">
       <motion.div {...options}>
-      
+      <img src={me} alt="Founder" height={200} width={200} />
         <h3>Aman Kumar Gupta</h3>
 
         <p>
