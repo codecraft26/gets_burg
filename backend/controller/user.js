@@ -1,12 +1,12 @@
-import { asyncError } from "../middlewares/errorMiddleware.js";
+const { asyncError } =require( "../middlewares/errorMiddleware.js");
 // import { Order } from "../models/Order.js";
 // import { Payment } from "../models/Payment.js";
-const Payment=require("../models/Payment")
-const Order=require("../models/Order")
+// const Payment=require("../models/Payment")
+// const Order=require("../models/Order")
 
-import ErrorHandler from "../utils/ErrorHandler.js";
-import { instance } from "../server.js";
-import crypto from "crypto";
+const ErrorHandler =require( "../utils/ErrorHandler.js");
+const { instance } =require( "../server.js");
+const crypto=require("crypto");
 
 export const placeOrder = asyncError(async (req, res, next) => {
   const {
