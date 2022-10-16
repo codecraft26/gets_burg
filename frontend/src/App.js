@@ -8,6 +8,7 @@ import Cart from "./component/cart/Cart";
 import {useState,useEffect} from 'react'
 import RiseLoader from "react-spinners/GridLoader";
 import "./App.css"
+import About from "./component/layout/About/About";
 function App() {
 
   const [loading,setLoading]=useState(false)
@@ -49,6 +50,8 @@ function App() {
       <Route path='/' element={<Home></Home>} />
       <Route path='/contact' element={<Contact/>} />
       <Route path='/cart' element={<Cart/>} />
+      <Route path='/about' element={<About/>} />
+
 
 
     </Routes>

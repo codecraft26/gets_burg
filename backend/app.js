@@ -3,6 +3,8 @@ const cookieParser =require('cookie-parser')
 const urlencoded=require("express")
 const app = express();
 const cors=require('cors')
+const dotenv =require('dotenv')
+
 
 
 
@@ -15,6 +17,10 @@ app.use(
     extended: true,
   })
 );
+
+dotenv.config({
+  path:'./config/congig.env'
+})
 
 app.use(
   cors({
