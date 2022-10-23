@@ -8,6 +8,7 @@ const store = configureStore({
   reducer: {
     auth: authReducer,
     cart: cartReducer,
+    Aman:cartRemover,
     order: orderReducer,
     orders: ordersReducer,
     admin: adminReducer,
