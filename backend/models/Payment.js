@@ -12,6 +12,7 @@ const schema = new mongoose.Schema({
   razorpay_signature: {
     type: String,
     required: true,
+   
   },
 
   createdAt: {
